@@ -1,0 +1,10 @@
+<div class="innerDiv">
+    <div class="text-center navbar-inverse">Converting {{currentValue}} pennies into coins</div>
+    <table style="width:100%">
+        <th>Coin</th><th>Amount</th>
+    </table>
+    <table ng-repeat="step in eachItem track by $index" style="width:100%">
+
+  <td> {{step["$"]}} </td> <td> {{ step["val"] }} </td>
+</table>
+</div>

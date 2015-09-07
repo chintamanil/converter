@@ -1,0 +1,100 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+.body{
+  font-size: 1.1em;
+  color: #0b0a4a;
+}
+
+.main {
+    padding: 15px;
+    color: inherit;
+    height : 300px;
+    background-color: #F5F5FF;
+    border-radius: 0;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+p.box{
+    color: #0b0a4a;
+    height:40px;
+    padding:10px 0 0 0;
+    display: inline-block;
+    font-size: 1.1em;
+    span{
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+
+}
+.form-inline {
+        display: inline-block;
+        .btn {
+            padding: 7px;
+        }
+        input {
+            width: 100px;
+            height: 35px;
+            border-radius: 4px;
+            border: 1px solid lightgrey;
+            margin: 0 15px 0 15px;
+            font-size: 14px;
+
+        }
+    }
+@media only screen and (max-width: 525px) {
+.form-inline {
+    margin: 0;
+    padding: 0;
+    input {
+        margin: 0;
+    }
+}
+  .navbar-brand {
+    padding: 15px 0 0 0;
+  }
+}
+
+th:last-child,
+td:last-child {
+    text-align: right;
+  padding-right: 15px;
+  border-bottom: 1px solid lightgray;
+
+}
+
+th:first-child,
+td:first-child {
+  text-align: left;
+  padding-left: 15px;
+  border-bottom: 1px solid lightgray;
+}
+
+.align-left, p.align-right p.align-left{
+  display:inline-block;
+}
+
+.innerDiv{
+  border: 1px solid lightgray;
+  padding-bottom: 5px;
+  background-color: white;
+}
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
