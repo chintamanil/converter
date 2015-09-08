@@ -1,13 +1,9 @@
-angular.module "sterlingConvert"
-  .directive 'acmeNavbar', ->
+coinNavbar = ->
+  directive = undefined
+  directive =
+    restrict: 'E'
+    templateUrl: 'app/views/directives/navbar.html'
+    scope: creationDate: '='
 
-#    NavbarController = () ->
-#      vm = this
+angular.module('sterlingConvert').directive 'coinNavbar', coinNavbar
 
-    directive =
-      restrict: 'E'
-      templateUrl: 'app/views/directives/navbar.html'
-      scope: creationDate: '='
-#      controller: NavbarController
-#      controllerAs: 'vm'
-#      bindToController: true

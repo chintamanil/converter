@@ -1,3 +1,4 @@
-angular.module "sterlingConvert"
-  .run ($log) ->
-    $log.debug 'runBlock end'
+run = ($log) ->
+  $log.debug 'runBlock end'
+
+angular.module('sterlingConvert').run run

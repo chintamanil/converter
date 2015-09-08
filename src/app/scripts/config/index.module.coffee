@@ -1,1 +1,1 @@
-angular.module 'sterlingConvert', ['restangular', 'ui.router', 'ui.bootstrap']
+angular.module 'sterlingConvert', [ 'ui.router', 'ui.bootstrap']

@@ -1,12 +1,17 @@
-angular.module "sterlingConvert"
-  .directive 'footerNav', ->
+footerNav = ->
+  footerController = undefined
 
-    footerController = () ->
-      vm = this
+  footerController = ->
+    vm = undefined
+    vm = this
 
-    directive =
-      restrict: 'E'
-      templateUrl: 'app/views/directives/footer.html'
-      controller: footerController
-      controllerAs: 'vm'
-      bindToController: true
+  {
+    restrict: 'E'
+    templateUrl: 'app/views/directives/footer.html'
+    controller: footerController
+    controllerAs: 'vm'
+    bindToController: true
+  }
+
+angular.module('sterlingConvert').directive 'footerNav', footerNav
+

@@ -12,16 +12,19 @@ $icon-font-path: "../../../bower_components/bootstrap-sass-official/assets/fonts
 // bower:scss
 // endbower
 
+$background-dark-color : #0b0a4a;
+$background-light-color : #F5F5FF;
+
 .body{
   font-size: 1.1em;
-  color: #0b0a4a;
+  color: $background-dark-color;
 }
 
 .main {
     padding: 15px;
     color: inherit;
     height : 300px;
-    background-color: #F5F5FF;
+    background-color: $background-light-color;
     border-radius: 0;
     display: inline-block;
     width: 100%;

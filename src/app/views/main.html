@@ -1,22 +1,22 @@
-<!--<div class="container">-->
+<div class="container">
 
   <div>
-    <acme-navbar/>
+    <coin-navbar/>
   </div >
 
   <div class="main" >
     <p class="box"><span>Enter monetary value for coin conversion</span><div class="form-inline">
-    <input type="text" ng-model="value" class="convert">
+    <input type="text" ng-model="value" ngMinlength="1" class="convert">
     <button class="btn btn-default" ng-click="convertMe(value)">Convert</button></div>
     </p>
 
 
 
-  <converter-nav currentValue="currentValue" each="each"/>
+    <converter-directive currentValue="currentValue" each="each"/>
 
   </div>
 
-<footer-nav/>
-<!--</div>-->
+  <footer-nav/>
+</div>
 
 

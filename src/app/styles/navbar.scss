@@ -1,12 +1,12 @@
-.acme-navbar-text{
-  color: white;
-}
+//.acme-navbar-text{
+//  color: white;
+//}
 
 .navbar-inverse  {
     background-color: #CCCDFD;
     border-color: #CCCDFD;
     padding : 5px 0 5px 0;
-    color: #0b0a4a;
+    color: $background-dark-color;
 }
 
 .navbar-inverse .navbar-brand {
