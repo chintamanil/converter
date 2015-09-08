@@ -53,6 +53,7 @@ currencyCalculateService = (MY_COINS) ->
       i = undefined
       resultArray = undefined
       value = undefined
+      console.log MY_COINS
       currencyList = Object.keys(MY_COINS).sort()
       resultArray = []
       i = currencyList.length - 1
@@ -69,6 +70,7 @@ currencyCalculateService = (MY_COINS) ->
           '$': currencyList[i]
           'val': value
         i--
+      console.log resultArray
       resultArray
 
   }

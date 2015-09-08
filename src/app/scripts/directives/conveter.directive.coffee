@@ -14,6 +14,7 @@ converterDirective = ->
   {
     restrict: 'E'
     link: link
+    scope: true
     templateUrl: 'app/views/directives/converter.html'
   }
 

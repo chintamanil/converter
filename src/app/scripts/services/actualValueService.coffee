@@ -25,7 +25,7 @@ ValueService = ->
         return false
       else
         midValue = inputValue.split('.')
-        return Number(midValue[0].split(0).join(''))*100 + Number(midValue[1].split('p').join(''))toFixed(0)
+        return Number(midValue[0].split(0).join(''))*100 + Number(midValue[1].split('p').join('')).toFixed(0)
 
     if inputValue[inputValue.length - 1] == 'p' and inputValue[0] == '£' and inputValue.match(/[.p]+/g)
       return Number(inputValue.split('.'))[0].toFixed(0)

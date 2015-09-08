@@ -11,8 +11,9 @@ MainController = ($scope, currencyCalculateService, ValueService) ->
     if vm.currentValue
       vm.each = currencyCalculateService.actualValue(vm.currentValue)
     else
-      vm.each = currencyCalculateService.originalValue()
+#      vm.each = currencyCalculateService.originalValue()
       vm.currentValue = 0
+      vm.value = 0
     console.log vm.currentValue
 
 angular.module('sterlingConvert').controller 'MainController', MainController
