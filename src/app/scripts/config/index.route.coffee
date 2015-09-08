@@ -1,3 +1,5 @@
+
+### @ngInject ###
 config = ($stateProvider, $urlRouterProvider) ->
   $stateProvider.state 'home',
     url: '/'

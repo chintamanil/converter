@@ -1,17 +1,13 @@
-//.acme-navbar-text{
-//  color: white;
-//}
 
 .navbar-inverse  {
-    background-color: #CCCDFD;
-    border-color: #CCCDFD;
+    background-color: $background-medium-color;
+    border-color: $background-medium-color;
     padding : 5px 0 5px 0;
     color: $background-dark-color;
 }
 
 .navbar-inverse .navbar-brand {
     color: #152A8A;
-//    padding: 10px 15px 10px 15px;
 }
 
 .navbar {
@@ -20,8 +16,9 @@
 
 .footer  {
     height: 40px;
-    background-color: #CCCDFD;
-    border-color: #CCCDFD;
+    background-color: $background-medium-color;
+    border-color: $background-medium-color;
     padding-top: 10px;
     font-size : 1.1em;
+    color: $background-dark-color;
 }

@@ -1,3 +1,4 @@
+### @ngInject ###
 footerNav = ->
   footerController = undefined
 

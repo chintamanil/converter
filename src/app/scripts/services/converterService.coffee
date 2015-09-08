@@ -1,3 +1,4 @@
+### @ngInject ###
 currencyCalculateService = (MY_COINS) ->
   {
     originalValue: ->

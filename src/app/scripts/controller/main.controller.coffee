@@ -1,13 +1,18 @@
+### @ngInject ###
 MainController = ($scope, currencyCalculateService, ValueService) ->
   vm = undefined
   vm = $scope
-  vm.value = 366
-  vm.currentValue = 12
+  vm.value = 0
+  vm.currentValue = 0
   vm.each = currencyCalculateService.originalValue()
 
   vm.convertMe = (valueIn) ->
     vm.currentValue = ValueService.parseValue(valueIn.toString())
-    vm.each = currencyCalculateService.actualValue(vm.currentValue)
+    if vm.currentValue
+      vm.each = currencyCalculateService.actualValue(vm.currentValue)
+    else
+      vm.each = currencyCalculateService.originalValue()
+      vm.currentValue = 0
     console.log vm.currentValue
 
 angular.module('sterlingConvert').controller 'MainController', MainController
