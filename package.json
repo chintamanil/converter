@@ -8,6 +8,7 @@
   "devDependencies": {
     "browser-sync": "~2.7.12",
     "browser-sync-spa": "~1.0.2",
+    "chai": "^3.2.0",
     "chalk": "~1.0.0",
     "concat-stream": "~1.5.0",
     "del": "~1.2.0",
@@ -48,8 +49,10 @@
     "lodash": "~3.9.3",
     "main-bower-files": "~2.8.0",
     "merge-stream": "~0.1.7",
+    "mocha": "^2.3.2",
     "normalize.css": "^3.0.3",
     "require-dir": "~0.3.0",
+    "sinon": "^1.16.1",
     "uglify-save-license": "~0.4.1",
     "wiredep": "~2.2.2",
     "wrench": "~1.5.8"

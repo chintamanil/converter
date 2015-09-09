@@ -1,59 +1,44 @@
 
+var assert = chai.assert,
+    expect = chai.expect,
+    should = chai.should();
 
-  function ValueService() {
-    this.parseValue = function (inputValue) {
-      var midValue;
-      if (inputValue.length === 0) {
-        return false;
-      }
-      if (inputValue.length === 1 && !inputValue.match(/[0-9]+/g)) {
-        return false;
-      }
-      if (inputValue.match(/[a-oq-zA-Z]+/g)) {
-        return false;
-      }
-      if (inputValue[0] === '£' && inputValue[inputValue.length - 1] !== 'p') {
-        return Number(inputValue.substr(1)).toFixed(2) * 100;
-      }
-      if (inputValue[0] === '£' && inputValue[inputValue.length - 1] === 'p') {
-        return Number(inputValue.substr(1, inputValue.length - 2)).toFixed(2) * 100;
-      }
-      if (inputValue[inputValue.length - 1] === 'p' && inputValue[0] !== '£' && !inputValue.match(/[.]+/g)) {
-        return Number(inputValue.substr(0, inputValue.length - 1)).toFixed(0);
-      }
-      if (inputValue[inputValue.length - 1] === 'p' && inputValue[0] === '0' && inputValue.match(/[.]+/g)) {
-        if (inputValue.split('.')[0].split(0).join('').length === 0) {
-          return false;
-        } else {
-          midValue = inputValue.split('.');
-          return Number(midValue[0].split(0).join('')) * 100 + Number(midValue[1].split('p').join('')).toFixed(0);
-        }
-      }
-      if (inputValue[inputValue.length - 1] === 'p' && inputValue[0] === '£' && inputValue.match(/[.p]+/g)) {
-        return Number(inputValue.split('.'))[0].toFixed(0);
-      }
-      if (inputValue[inputValue.length - 1] !== 'p' && inputValue[0] !== '£' && inputValue.match(/[.]+/g)) {
-        return false;
-      } else {
-        return inputValue;
-      }
-    };
-  };
-
-
- describe("Service test", function() {
+describe("Service test", function() {
    describe("Different input values", function () {
-     it("£ testing", function () {
-       var result = new ValueService();
-       expect(result.parse("£123")).to.equal("12300");
-     });
 
-     it("p testing", function () {
-       var result = ValueService.parse("1.3p");
-       expect(result).to.equal("130");
-     });
+      it('£ testing1', function() {
+        var res = new ValueService();
+        expect(res.parseValue("£1")).to.equals('100');
+      });
+
+      it('£ testing2', function() {
+        var res = new ValueService();
+        expect(res.parseValue("£1.1p")).to.equals('110');
+      });
+
+     it('p testing1', function() {
+        var res = new ValueService();
+        expect(res.parseValue("1.1p")).to.equals('110');
+      });
+
+     it('p testing2', function() {
+        var res = new ValueService();
+        expect(res.parseValue("1.17777p")).to.equals('118');
+      });
+
+      it('p testing3', function() {
+        var res = new ValueService();
+        expect(res.parseValue("0.17777p")).to.equals(false);
+      });
+
+     it('p testing3', function() {
+        var res = new ValueService();
+        expect(res.parseValue("123")).to.equals('123');
+      });
+
    });
  });
+
 
 
 

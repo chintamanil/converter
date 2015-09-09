@@ -1,5 +1,9 @@
 
-  function ValueService() {
+function isEven(num) {
+  return num%2?false:true
+}
+
+function ValueService() {
     this.parseValue = function (inputValue) {
       var midValue;
       if (inputValue.length === 0) {
@@ -12,16 +16,17 @@
         return false;
       }
       if (inputValue[0] === '£' && inputValue[inputValue.length - 1] !== 'p') {
-        return Number(inputValue.substr(1)).toFixed(2) * 100;
+        return String(Number(inputValue.substr(1)).toFixed(2) * 100);
       }
       if (inputValue[0] === '£' && inputValue[inputValue.length - 1] === 'p') {
-        return Number(inputValue.substr(1, inputValue.length - 2)).toFixed(2) * 100;
+        return((Number(inputValue.substr(1, inputValue.length - 2))* 100).toFixed(0))
       }
-      if (inputValue[inputValue.length - 1] === 'p' && inputValue[0] !== '£' && !inputValue.match(/[.]+/g)) {
-        return Number(inputValue.substr(0, inputValue.length - 1)).toFixed(0);
+      if (inputValue[inputValue.length - 1] === 'p' && inputValue[0] !== '£' && inputValue[0] !== '0' && inputValue.match(/[.]+/g)!==null) {
+        return (Number((inputValue.substr(0, inputValue.length - 1))*100).toFixed(0))
       }
       if (inputValue[inputValue.length - 1] === 'p' && inputValue[0] === '0' && inputValue.match(/[.]+/g)) {
         if (inputValue.split('.')[0].split(0).join('').length === 0) {
+          console.log(inputValue);
           return false;
         } else {
           midValue = inputValue.split('.');
@@ -39,3 +44,20 @@
     };
   };
 
+// cow.js
+(function(exports) {
+  "use strict";
+
+  function Cow(name) {
+    this.name = name || "Anon cow";
+  }
+  exports.Cow = Cow;
+
+  Cow.prototype = {
+    greets: function(target) {
+      if (!target)
+        throw new Error("missing target");
+      return this.name + " greets " + target;
+    }
+  };
+})(this);
