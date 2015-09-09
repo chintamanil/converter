@@ -33,3 +33,9 @@ install gulp and the gulp dependencies:
 `profile_blog$ gulp`
 `profile_blog$ gulp serve`
 ```
+
+## Testing the converter
+`cd test`
+open index.html
+It will run the mocha test for the service/function for currency converter
+
