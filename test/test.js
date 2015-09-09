@@ -44,8 +44,8 @@
  describe("Service test", function() {
    describe("Different input values", function () {
      it("£ testing", function () {
-       var result = ValueService.parse("£123");
-       expect(result).to.equal("12300");
+       var result = new ValueService();
+       expect(result.parse("£123")).to.equal("12300");
      });
 
      it("p testing", function () {
