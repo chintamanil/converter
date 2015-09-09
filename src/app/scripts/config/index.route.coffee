@@ -1,5 +1,5 @@
 
-### @ngInject ###
+# @ngInject
 config = ($stateProvider, $urlRouterProvider) ->
   $stateProvider.state 'home',
     url: '/'
@@ -7,5 +7,7 @@ config = ($stateProvider, $urlRouterProvider) ->
     controller: 'MainController'
     controllerAs: 'main'
   $urlRouterProvider.otherwise '/'
+
+config.$inject = ['$stateProvider', '$urlRouterProvider' ]
 
 angular.module('sterlingConvert').config config

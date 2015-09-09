@@ -26,7 +26,7 @@
     "gulp-jshint": "~1.11.0",
     "gulp-load-plugins": "~0.10.0",
     "gulp-minify-html": "~1.0.3",
-    "gulp-ng-annotate": "~1.0.0",
+    "gulp-ng-annotate": "^1.1.0",
     "gulp-protractor": "~1.0.0",
     "gulp-rename": "~1.2.2",
     "gulp-replace": "~0.5.3",
@@ -53,6 +53,7 @@
     "normalize.css": "^3.0.3",
     "require-dir": "~0.3.0",
     "sinon": "^1.16.1",
+    "sinon-chai": "^2.8.0",
     "uglify-save-license": "~0.4.1",
     "wiredep": "~2.2.2",
     "wrench": "~1.5.8"

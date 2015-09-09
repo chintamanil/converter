@@ -1,4 +1,4 @@
-### @ngInject ###
+# @ngInject
 coinNavbar = ->
   directive = undefined
   directive =

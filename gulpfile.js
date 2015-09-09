@@ -7,7 +7,9 @@
 'use strict';
 
 var gulp = require('gulp');
-var wrench = require('wrench');
+var wrench = require('wrench'),
+    ngAnnotate  = require('gulp-ng-annotate');
+
 
 /**
  *  This will load all js or coffee files in the gulp directory
@@ -19,6 +21,12 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
   require('./gulp/' + file);
 });
 
+gulp.task('js-an', function() {
+    gulp.src(['/serve/app/**/*.js'])
+        .pipe(ngAnnotate())
+        .pipe(gulp.dest('.tmp/annotate/'))
+
+});
 
 /**
  *  Default task clean temporaries directories and launch the

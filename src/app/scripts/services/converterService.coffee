@@ -1,4 +1,4 @@
-### @ngInject ###
+# @ngInject
 currencyCalculateService = (MY_COINS) ->
   {
     originalValue: ->
@@ -74,5 +74,5 @@ currencyCalculateService = (MY_COINS) ->
       resultArray
 
   }
-
+currencyCalculateService.$inject = ['MY_COINS']
 angular.module('sterlingConvert').factory 'currencyCalculateService', currencyCalculateService

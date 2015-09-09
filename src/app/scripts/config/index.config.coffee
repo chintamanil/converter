@@ -1,3 +1,9 @@
-angular.module "sterlingConvert"
-  .config ($logProvider) ->
-    $logProvider.debugEnabled true
+# @ngInject
+log = ($logProvider) ->
+  $logProvider.debugEnabled true
+
+log.$inject = ['$logProvider' ]
+angular.module('sterlingConvert').config [
+  '$logProvider'
+  log
+]

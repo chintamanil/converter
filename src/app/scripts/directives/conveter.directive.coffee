@@ -1,3 +1,4 @@
+# @ngInject
 converterDirective = ->
   link = undefined
 

@@ -1,4 +1,4 @@
-### @ngInject ###
+# @ngInject
 MainController = ($scope, currencyCalculateService, ValueService) ->
   vm = undefined
   vm = $scope
@@ -16,4 +16,5 @@ MainController = ($scope, currencyCalculateService, ValueService) ->
       vm.value = 0
     console.log vm.currentValue
 
+MainController.$inject = ['$scope', 'currencyCalculateService', 'ValueService' ]
 angular.module('sterlingConvert').controller 'MainController', MainController

@@ -44,20 +44,11 @@ function ValueService() {
     };
   };
 
-// cow.js
-(function(exports) {
-  "use strict";
-
-  function Cow(name) {
-    this.name = name || "Anon cow";
-  }
-  exports.Cow = Cow;
-
-  Cow.prototype = {
-    greets: function(target) {
-      if (!target)
-        throw new Error("missing target");
-      return this.name + " greets " + target;
+angular.module('factories', [])
+.factory('chimp', ['$log', function($log) {
+  return {
+    ook: function() {
+      $log.warn('Ook.');
     }
   };
-})(this);
+}]);
