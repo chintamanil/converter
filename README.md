@@ -31,9 +31,9 @@ install gulp and the gulp dependencies:
 gulp serve will start the non minified server [js css NOT minified]
 gulp serve:dist will start the minified server [js css minified]
 ```
-`profile_blog$ npm install`
-`profile_blog$ gulp`
-`profile_blog$ gulp serve`
+`converter$ npm install`
+`converter$ gulp`
+`converter$ gulp serve`
 ```
 
 ## Testing the converter
