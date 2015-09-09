@@ -42,7 +42,7 @@ open index.html
 It will run the mocha test for the service/function for checking if currency is in correct format.
 This is an independent mocha run
 
-To run mocha with Karma DO : in project directory `converter`
+To run mocha with Karma DO : in project directory converter
 `karma start`
 
 
