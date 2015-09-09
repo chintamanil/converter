@@ -1,8 +1,4 @@
 
-function isEven(num) {
-  return num%2?false:true
-}
-
 function ValueService() {
     this.parseValue = function (inputValue) {
       var midValue;
@@ -43,12 +39,3 @@ function ValueService() {
       }
     };
   };
-
-angular.module('factories', [])
-.factory('chimp', ['$log', function($log) {
-  return {
-    ook: function() {
-      $log.warn('Ook.');
-    }
-  };
-}]);

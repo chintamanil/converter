@@ -13,15 +13,18 @@ ValueService = ->
       return String(Number(inputValue.substr(1)).toFixed(2) * 100)
     if inputValue[0] == '£' and inputValue[inputValue.length - 1] == 'p'
       return (Number(inputValue.substr(1, inputValue.length - 2)) * 100).toFixed(0)
-    if inputValue[inputValue.length - 1] == 'p' and inputValue[0] != '£' and inputValue[0] != '0' and inputValue.match(/[.]+/g) != null
-      return Number(inputValue.substr(0, inputValue.length - 1) * 100).toFixed(0)
-    if inputValue[inputValue.length - 1] == 'p' and inputValue[0] == '0' and inputValue.match(/[.]+/g)
+
+    if inputValue[0] == '0' and inputValue.match(/[.]+/g)
       if inputValue.split('.')[0].split(0).join('').length == 0
-        console.log inputValue
+        console.log inputValue, 'here'
         return false
       else
         midValue = inputValue.split('.')
-        return Number(midValue[0].split(0).join('')) * 100 + Number(midValue[1].split('p').join('')).toFixed(0)
+        return Number(midValue[0].split(0).join('')) * 100 + Number(midValue[1].split('p').join(''))
+
+    if inputValue[inputValue.length - 1] == 'p' and inputValue[0] != '£' and inputValue.match(/[.]+/g) == null
+      return Number(inputValue.substr(0, inputValue.length - 1) ).toFixed(0)
+
     if inputValue[inputValue.length - 1] == 'p' and inputValue[0] == '£' and inputValue.match(/[.p]+/g)
       return Number(inputValue.split('.'))[0].toFixed(0)
     if inputValue[inputValue.length - 1] != 'p' and inputValue[0] != '£' and inputValue.match(/[.]+/g)

@@ -16,9 +16,14 @@ function listFiles() {
     .concat([
       path.join(conf.paths.tmp, '/serve/app/**/*.module.js'),
       path.join(conf.paths.tmp, '/serve/app/**/*.js'),
-      path.join(conf.paths.src, '/**/*.spec.js'),
+      path.join(conf.paths.src, 'app/scripts/**/*.spec.js'),
       path.join(conf.paths.src, '/**/*.mock.js'),
-      path.join(conf.paths.src, '/**/*.html')
+      path.join(conf.paths.src, '/**/*.html'),
+      path.join('test/mocha.conf.js'),
+      path.join('bower_components/angular/angular.js'),
+      path.join('bower_components/angular-bootstrap/ui-bootstrap-tlps.js'),
+      path.join('bower_components/angular-mocks/angular-mocks.js')
+
     ]);
 }
 
@@ -31,7 +36,7 @@ module.exports = function(config) {
 
     autoWatch: false,
 
-    frameworks: ['jasmine', 'angular-filesort'],
+    frameworks: ['mocha', 'sinon-chai'],
 
     angularFilesort: {
       whitelist: [path.join(conf.paths.tmp, '/**/!(*.html|*.spec|*.mock).js')]
@@ -42,12 +47,23 @@ module.exports = function(config) {
       moduleName: 'sterlingConvert'
     },
 
-    browsers : ['PhantomJS'],
+    browsers : ['Chrome_without_security','PhantomJS_without_security'],
+    customLaunchers: {
+      Chrome_without_security: {
+        base: 'Chrome',
+        flags: ['--disable-web-security']
+      },
+      PhantomJS_without_security: {
+        base: 'PhantomJS',
+        flags: ['--web-security=no']
+      }
+    },
 
     plugins : [
       'karma-phantomjs-launcher',
       'karma-angular-filesort',
-      'karma-jasmine',
+      'karma-mocha',
+      'karma-sinon-chai',
       'karma-ng-html2js-preprocessor'
     ],
 

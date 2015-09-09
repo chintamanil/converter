@@ -36,34 +36,13 @@ describe("Service test for checknig input values ", function() {
         expect(res.parseValue("123")).to.equals('123');
       });
 
+        it('12p testing', function() {
+        var res = new ValueService();
+        expect(res.parseValue("12p")).to.equals('12');
+      });
    });
  });
 
-describe('factories', function() {
-
-  beforeEach(module('factories'));
-
-  var chimp;
-  var $log;
-
-  beforeEach(inject(function(_chimp_, _$log_) {
-    chimp = _chimp_;
-    $log = _$log_;
-    sinon.stub($log, 'warn', function() {});
-  }));
-
-  describe('when invoked', function() {
-
-    beforeEach(function() {
-      chimp.ook();
-    });
-
-    it('should say Ook', function() {
-      expect($log.warn.callCount).to.equal(1);
-      expect($log.warn.args[0][0]).to.equal('Ook.');
-    });
-  });
-});
 
 
 
