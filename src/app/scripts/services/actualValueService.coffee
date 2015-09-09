@@ -25,8 +25,9 @@ ValueService = ->
     if inputValue[inputValue.length - 1] == 'p' and inputValue[0] != '£' and inputValue.match(/[.]+/g) == null
       return Number(inputValue.substr(0, inputValue.length - 1) ).toFixed(0)
 
-    if inputValue[inputValue.length - 1] == 'p' and inputValue[0] == '£' and inputValue.match(/[.p]+/g)
-      return Number(inputValue.split('.'))[0].toFixed(0)
+    if inputValue[inputValue.length - 1] == 'p' and inputValue.match(/[.]+/g) !=null
+      return Number(inputValue.substr(0, inputValue.length - 1)*100).toFixed(0)
+
     if inputValue[inputValue.length - 1] != 'p' and inputValue[0] != '£' and inputValue.match(/[.]+/g)
       false
     else

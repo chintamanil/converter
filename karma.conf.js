@@ -47,7 +47,7 @@ module.exports = function(config) {
       moduleName: 'sterlingConvert'
     },
 
-    browsers : ['Chrome_without_security','PhantomJS_without_security'],
+    browsers : ['PhantomJS_without_security'],
     customLaunchers: {
       Chrome_without_security: {
         base: 'Chrome',
