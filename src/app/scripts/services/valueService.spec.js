@@ -27,9 +27,11 @@
     it('check 1.2p', function () {
         expect(ValueService.parseValue('1.2p')).to.equals('120')
     });
+    it('check 0.2p', function () {
+        expect(ValueService.parseValue('0.2p')).to.equals(false)
+    });
 
 });
-
 
 })();
 
