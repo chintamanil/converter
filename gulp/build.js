@@ -3,6 +3,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
+var mainBowerFiles = require('main-bower-files');
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
@@ -68,10 +69,18 @@ gulp.task('html', ['inject', 'partials'], function () {
 // Only applies for fonts from bower dependencies
 // Custom fonts are handled by the "other" task
 gulp.task('fonts', function () {
-  return gulp.src($.mainBowerFiles())
-    .pipe($.filter('**/*.{eot,svg,ttf,woff,woff2}'))
+  //return gulp.src($.mainBowerFiles())
+  return gulp.src(['bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*.ttf',
+    'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*.woff2',
+  'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*.woff'])
+    //.pipe($.filter('/*.{eot,svg,ttf,woff,woff2}'))
     .pipe($.flatten())
     .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
+});
+
+gulp.task('html2', function () {
+  return gulp.src(['src/app/views/*.html', 'src/app/views/**/*.html'])
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/app/views/')));
 });
 
 gulp.task('other', function () {
@@ -91,4 +100,4 @@ gulp.task('clean', function (done) {
   $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')], done);
 });
 
-gulp.task('build', ['html', 'fonts', 'other']);
+gulp.task('build', ['html', 'fonts', 'other', 'html2']);
