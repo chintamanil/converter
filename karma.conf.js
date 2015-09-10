@@ -47,7 +47,7 @@ module.exports = function(config) {
       moduleName: 'sterlingConvert'
     },
 
-    browsers : ['PhantomJS_without_security'],
+    browsers : ['PhantomJS'],
     customLaunchers: {
       Chrome_without_security: {
         base: 'Chrome',
@@ -64,12 +64,22 @@ module.exports = function(config) {
       'karma-angular-filesort',
       'karma-mocha',
       'karma-sinon-chai',
+        'karma-coverage',
       'karma-ng-html2js-preprocessor'
     ],
-
+      
+      reporters: ['progress', 'coverage'],
+      
     preprocessors: {
-      'src/**/*.html': ['ng-html2js']
+      'src/**/*.html': ['ng-html2js'],
+        'src/**/*.js': ['coverage']
+    },
+      
+    coverageReporter: {
+      type: 'html',
+      dir: 'coverage/'
     }
+      
   };
 
   // This block is needed to execute Chrome on Travis

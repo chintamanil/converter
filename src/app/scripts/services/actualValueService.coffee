@@ -3,14 +3,12 @@ ValueService = ->
 
   @parseValue = (inputValue) ->
     midValue = undefined
-    if inputValue.length == 0
+    if inputValue.length == 0 or (inputValue.length == 1 and !inputValue.match(/[0-9]+/g)) or inputValue.match(/[a-oq-zA-Z]+/g)
       return false
-    if inputValue.length == 1 and !inputValue.match(/[0-9]+/g)
-      return false
-    if inputValue.match(/[a-oq-zA-Z]+/g)
-      return false
+
     if inputValue[0] == '£' and inputValue[inputValue.length - 1] != 'p'
       return String(Number(inputValue.substr(1)).toFixed(2) * 100)
+
     if inputValue[0] == '£' and inputValue[inputValue.length - 1] == 'p'
       return (Number(inputValue.substr(1, inputValue.length - 2)) * 100).toFixed(0)
 
