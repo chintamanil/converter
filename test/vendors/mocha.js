@@ -485,7 +485,7 @@ Hook.prototype.error = function(err) {
  */
 
 var Suite = require('../suite');
-var Test = require('../test');
+var Test = require('../index');
 var escapeRe = require('escape-string-regexp');
 
 /**
@@ -675,7 +675,7 @@ module.exports = function(suites, context) {
  */
 
 var Suite = require('../suite');
-var Test = require('../test');
+var Test = require('../index');
 
 /**
  * TDD-style interface:
@@ -744,7 +744,7 @@ exports.exports = require('./exports');
  */
 
 var Suite = require('../suite');
-var Test = require('../test');
+var Test = require('../index');
 var escapeRe = require('escape-string-regexp');
 
 /**
@@ -839,7 +839,7 @@ module.exports = function(suite) {
  */
 
 var Suite = require('../suite');
-var Test = require('../test');
+var Test = require('../index');
 var escapeRe = require('escape-string-regexp');
 
 /**
@@ -984,7 +984,7 @@ exports.Context = require('./context');
 exports.Runner = require('./runner');
 exports.Suite = require('./suite');
 exports.Hook = require('./hook');
-exports.Test = require('./test');
+exports.Test = require('./../test');
 
 /**
  * Return image `name` path.

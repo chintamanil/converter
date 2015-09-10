@@ -16,7 +16,7 @@ function listFiles() {
     .concat([
       path.join(conf.paths.tmp, '/serve/app/**/*.module.js'),
       path.join(conf.paths.tmp, '/serve/app/**/*.js'),
-      path.join(conf.paths.src, 'app/scripts/**/*.spec.js'),
+      path.join(conf.paths.src, 'tests/**/*.spec.js'),
       path.join(conf.paths.src, '/**/*.mock.js'),
       path.join(conf.paths.src, '/**/*.html'),
       path.join('test/mocha.conf.js'),
